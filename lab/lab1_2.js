@@ -6,8 +6,8 @@ AWS.config.loadFromPath('./config.json');
 var task =  function(request, callback){
 	
 ec2.describeInstances(params, function(err, data) {
-	if (err) callback("Error"); // an error occurred
-	else     callback(data);    // successful response
+	if (err) callback(null, "Error"); // an error occurred
+	else     callback(null, data);    // successful response
 });
 	
 }
